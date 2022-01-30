@@ -45,7 +45,11 @@ struct SoundIoAtomicULong {
 
 #else
 
+#ifdef _MSC_VER
+#include "stdatomic_msvc.h"
+#else
 #include <stdatomic.h>
+#endif
 
 struct SoundIoAtomicLong {
     atomic_long x;

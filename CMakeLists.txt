@@ -179,6 +179,11 @@ if(SOUNDIO_HAVE_WASAPI)
         "${libsoundio_SOURCE_DIR}/src/wasapi.c"
     )
 endif()
+if(MSVC)
+    set(LIBSOUNDIO_SOURCES ${LIBSOUNDIO_SOURCES}
+        "${libsoundio_SOURCE_DIR}/src/stdatomic_msvc.c"
+    )
+endif()
 
 include_directories(
     ${libsoundio_SOURCE_DIR}
